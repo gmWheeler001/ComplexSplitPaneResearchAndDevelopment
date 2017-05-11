@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2015. K2 Workflow. All rights reserved
+  -->
+
+<bitmap
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:src="@drawable/ic_outbox_taskcard_error_bg"
+    android:gravity="top" />

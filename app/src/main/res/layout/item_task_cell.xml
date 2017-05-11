@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimaryDark"
+    android:gravity="center_vertical">
+
+    <LinearLayout
+        android:id="@+id/linearLayoutSelector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/selectedIndicator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingEnd="5dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingStart="5dp"
+            android:paddingTop="0dp">
+
+            <!-- holds the text -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- heading and date -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/task_cell_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Default Title Text"
+                        android:textColor="@color/taskCellTitle"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_toLeftOf="@+id/task_cell_date"
+                        android:layout_toStartOf="@+id/task_cell_date"/>
+
+                    <TextView
+                        android:id="@+id/task_cell_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/taskCellInfo"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:paddingTop="10dp"
+                        android:textSize="12sp"
+                        android:paddingLeft="10dp"
+                        android:paddingStart="10dp"
+                        android:paddingRight="0dp"
+                        android:paddingEnd="0dp"
+                        android:text="25th August 2015"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/task_cell_folio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Default Folio Text"
+                    android:textColor="@color/taskCellInfo"
+                    android:textSize="14sp"
+                    android:ellipsize="none"
+                    android:maxLines="10"
+                    android:textStyle="bold"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/task_cell_process"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Default Process Text"
+                        android:textColor="@color/taskCellInfo"
+                        android:textSize="12sp"
+                        android:layout_toLeftOf="@+id/task_cell_priority_image"
+                        android:layout_toStartOf="@+id/task_cell_priority_image"/>
+
+                    <ImageView
+                        android:id="@+id/task_cell_priority_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_task_priority_selected_white"
+                        android:layout_toLeftOf="@+id/task_cell_status_image"
+                        android:layout_toStartOf="@+id/task_cell_status_image"/>
+
+                    <ImageView
+                        android:id="@+id/task_cell_status_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_task_allocated_selected_white"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"/>
+
+                </RelativeLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/taskSeperator" />
+    </LinearLayout>
+</RelativeLayout>

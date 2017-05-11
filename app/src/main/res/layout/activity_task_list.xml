@@ -1,0 +1,441 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    android:divider="?android:attr/dividerHorizontal"
+    android:orientation="horizontal"
+    tools:context=".TaskListActivity">
+
+    <!--
+    This layout is a two-pane layout for the Tasks
+    master/detail flow.
+    -->
+    <RelativeLayout
+        android:id="@+id/task_list_holder"
+        android:layout_width="500dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/menu_content_holder"
+            android:layout_width="58dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.design.widget.AppBarLayout
+                android:id="@+id/app_bar_menu"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:theme="@style/AppTheme.AppBarOverlay">
+
+                <RelativeLayout
+                    android:id="@+id/open_menu_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:gravity="end">
+
+                    <ImageView
+                        android:id="@+id/open_menu_logo"
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="@string/none"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="10dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/bg_k2_logo" />
+
+                    <ImageView
+                        android:id="@+id/open_menu_button_text"
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/open_menu_logo"
+                        android:layout_toRightOf="@id/open_menu_logo"
+                        android:contentDescription="@string/none"
+                        android:paddingTop="22dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/bg_k2_logo_text" />
+                </RelativeLayout>
+            </android.support.design.widget.AppBarLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/menu_shadow" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/menu_user_details_holder"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorAccentLight"
+                        android:orientation="vertical"
+                        android:paddingBottom="5dp"
+                        android:paddingEnd="0dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="0dp"
+                        android:paddingStart="10dp"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="-10dp"
+                            android:layout_marginStart="-10dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_gravity="center"
+                                android:contentDescription="@string/none"
+                                android:src="@drawable/ic_profile" />
+
+                            <TextView
+                                android:id="@+id/menu_user_details_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom"
+                                android:layout_marginBottom="5dp"
+                                android:singleLine="true"
+                                android:text="@string/userName"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/menu_user_details_email"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-10dp"
+                            android:singleLine="true"
+                            android:text="@string/userEmail"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <ScrollView
+                        android:id="@+id/menu_container_scroller"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <!-- the selector indicator -->
+                            <ImageView
+                                android:id="@+id/menuSelectorIndicatorImageView"
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:layout_marginEnd="3dp"
+                                android:layout_marginLeft="2dp"
+                                android:layout_marginRight="3dp"
+                                android:layout_marginStart="2dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@color/menuSelection" />
+
+                            <!-- holds the buttons -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <!-- holds the inbox button -->
+                                <LinearLayout
+                                    android:id="@+id/menu_inbox_button_linearLayout"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="60dp"
+                                    android:layout_margin="5dp"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:contentDescription="@string/none"
+                                        android:padding="8dp"
+                                        android:src="@drawable/ic_inbox" />
+
+                                    <TextView
+                                        android:id="@+id/menu_inbox_text"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:ellipsize="none"
+                                        android:singleLine="true"
+                                        android:text="@string/inbox"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <!-- holds the outbox button -->
+                                <LinearLayout
+                                    android:id="@+id/menu_outbox_button_linearLayout"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="60dp"
+                                    android:layout_margin="5dp"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:contentDescription="@string/none"
+                                        android:padding="8dp"
+                                        android:src="@drawable/ic_outbox" />
+
+                                    <TextView
+                                        android:id="@+id/menu_outbox_text"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:ellipsize="none"
+                                        android:singleLine="true"
+                                        android:text="@string/outbox" />
+                                </LinearLayout>
+
+                                <!-- holds the forms button -->
+                                <LinearLayout
+                                    android:id="@+id/menu_forms_button_linearLayout"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="60dp"
+                                    android:layout_margin="5dp"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:contentDescription="@string/none"
+                                        android:padding="8dp"
+                                        android:src="@drawable/ic_forms" />
+
+                                    <TextView
+                                        android:id="@+id/menu_forms_text"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:ellipsize="none"
+                                        android:singleLine="true"
+                                        android:text="@string/forms" />
+                                </LinearLayout>
+
+                                <!-- the horizontal line separator -->
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@drawable/menu_separator" />
+
+                                <!-- holds the feedback button -->
+                                <LinearLayout
+                                    android:id="@+id/menu_feedback_button_linearLayout"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="60dp"
+                                    android:layout_margin="5dp"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:contentDescription="@string/none"
+                                        android:padding="8dp"
+                                        android:src="@drawable/ic_feedback" />
+
+                                    <TextView
+                                        android:id="@+id/menu_feedback_text"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:ellipsize="none"
+                                        android:singleLine="true"
+                                        android:text="@string/feedback" />
+                                </LinearLayout>
+
+                                <!-- holds the logout button -->
+                                <LinearLayout
+                                    android:id="@+id/menu_logout_button_linearLayout"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="60dp"
+                                    android:layout_margin="5dp"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:contentDescription="@string/none"
+                                        android:padding="8dp"
+                                        android:src="@drawable/ic_logout" />
+
+                                    <TextView
+                                        android:id="@+id/menu_logout_text"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:ellipsize="none"
+                                        android:singleLine="true"
+                                        android:text="@string/logout" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </ScrollView>
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <!-- the task list and its bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@+id/menu_content_holder"
+            android:layout_toRightOf="@+id/menu_content_holder"
+            android:orientation="vertical">
+
+            <android.support.design.widget.AppBarLayout
+                android:id="@+id/app_bar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:padding="0dp"
+                android:theme="@style/AppTheme.AppBarOverlay">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/logo_mobile_text_image"
+                        android:layout_width="200dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="18dp"
+                        android:scaleType="fitStart"
+                        android:src="@drawable/bg_k2_logo_mobile" />
+
+                    <EditText
+                        android:id="@+id/master_search_text"
+                        style="?android:attr/textAppearanceLarge"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/search_button"
+                        android:layout_toStartOf="@+id/search_button"
+                        android:inputType="textAutoComplete"
+                        android:textColor="@color/detailTitle"
+                        android:visibility="invisible" />
+
+                    <ImageView
+                        android:id="@+id/search_button"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="@string/none"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_search" />
+
+                    <ImageView
+                        android:id="@+id/close_search_button"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="@string/none"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_close"
+                        android:visibility="gone" />
+                </RelativeLayout>
+            </android.support.design.widget.AppBarLayout>
+
+            <!-- the task list -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimary"
+                    android:scrollbarThumbVertical="@drawable/tasklist_scrollbar"
+                    android:scrollbars="vertical" />
+
+                <TextView
+                    android:id="@+id/divider_space"
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/master_detail_divider" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/task_detail_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toEndOf="@+id/task_list_holder"
+        android:layout_toRightOf="@+id/task_list_holder">
+
+        <include layout="@layout/inbox_view_task_detail_items_container" />
+
+    </FrameLayout>
+
+    <!--
+        for the welcome page
+    -->
+    <RelativeLayout
+        android:id="@+id/loadingWindowContainerViewRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_vignetted_loading_screen">
+
+        <!--<ImageView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:src="@drawable/k2_logo"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:visibility="visible"/>-->
+
+        <RelativeLayout
+            android:id="@+id/progress_loader_animation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textColor="@color/detailTitle"-->
+        <!--android:textStyle="bold"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_below="@+id/progress_loader_animation"-->
+        <!--android:textSize="25sp"-->
+        <!--android:text="PLEASE WAIT"/>-->
+
+    </RelativeLayout>
+
+</RelativeLayout>

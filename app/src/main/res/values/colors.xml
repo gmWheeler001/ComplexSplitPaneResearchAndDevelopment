@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--primary color utils-->
+    <color name="colorPrimary">#302E31</color>
+    <color name="colorPrimaryDark">#242325</color>
+    <color name="colorAccent">#3BA2DA</color>
+    <color name="menuSelection">#C03BA2DA</color>
+    <color name="colorAccentLight">#7d7880</color>
+    <color name="detailTitle">#f1f1f1</color>
+    <color name="taskCellTitle">#f1f1f1</color>
+    <color name="taskCellInfo">#c1c1c1</color>
+    <color name="taskSeperator">#302E31</color>
+    <color name="transparent">#00000000</color>
+
+    <!--toolbar and menu-->
+    <color name="toolbar_Background">#302E31</color>
+    <color name="navigationMenu_Background">#302E31</color>
+
+    <!--text colors-->
+    <color name="textcolor_White_normal">#ffffff</color>
+    <color name="textcolor_White_hint_30percent">#4dffffff</color>
+    <color name="textcolor_White_secondary_70percent">#b3ffffff</color>
+    <color name="textcolor_Blue_tasklist_timestamp">#6594ae</color>
+
+    <!--login colors-->
+    <color name="textedit_Blue_AccentColor">#6642a5f5</color>
+    <color name="textedit_Red_AccentColor">#dd2c00</color>
+    <color name="ProgressBar_Button_Green_Color">#989c30</color>
+    <color name="textColor_BrightGreen">#989c30</color>
+    <color name="textcolor_Login_White">#ffffff</color>
+    <color name="textcolor_Login_White_With_Alpha">#4Dffffff</color>
+    <color name="textColor_DarkGreen">#4f5119</color>
+    <color name="errorbar_Android_background_With_Alpha">#e6303030</color>
+    <color name="pink">#e91e63</color>
+    <color name="pink_pressed">#ec407a</color>
+    <color name="description_view_color">#6594ae</color>
+    <color name="time_drawer_view_color">#ff671b</color>
+    <color name="assigned_to_view_color">#a7a936</color>
+
+    <!--view task detail-->
+    <color name="view_task_details_event_name_color">#B3424242</color>
+    <color name="view_task_details_process_name_color">#59424242</color>
+    <color name="view_task_details_actions_dialog_color">#404040</color>
+    <color name="view_task_details_folio_color">#a9a9a9</color>
+    <color name="view_task_details_view_background">#f2f2f2</color>
+    <color name="view_task_details_frag_main_background">#ffffff</color>
+    <color name="view_task_details_start_date_color">#6594ae</color>
+    <color name="view_task_details_bottom_bg_color">#f6f6f7</color>
+    <color name="view_task_details_info_text_color">#8C6594ae</color>
+
+    <!--tasklist and menu colors-->
+    <color name="tasklist_menu_dividerline_grey">#111111</color>
+    <color name="menu_dividerline">#49484A</color>
+    <color name="form_button_color_normal">#ae1e1e</color>
+    <color name="tasklist_single_item_header">#1e1d1f</color>
+    <color name="tasklist_error_red_fontcolor">#820f15</color>
+    <color name="bg_tasklist_task_unselected">#302e31</color>
+    <color name="bg_tasklist_task_unselected_orig">#454547</color>
+    <color name="bg_tasklist_task_selected">#3BA2DA</color>
+    <color name="textcolor_tasklist_timestamp">#b3ffffff</color>
+    <color name="view_task_details_due_date_color">#4caf50</color>
+    <color name="view_task_details_overdue_date_color">#e53935</color>
+    <color name="view_task_details_assigned_to_list_color">#a7a936</color>
+    <color name="outbox_action_item_color">#666594ae</color>
+    <color name="outbox_details_action_type_disabled">#40424242</color>
+    <color name="outbox_details_action_details_disabled">#40424242</color>
+    <color name="outbox_details_action_type_enabled">#B3424242</color>
+    <color name="outbox_details_action_details_enabled">#8F424242</color>
+    <color name="outbox_details_action_date_enabled">#8F424242</color>
+    <color name="outbox_details_action_date_disabled">#40424242</color>
+
+    <!--custom datepicker colors-->
+    <color name="custom_sleep_dialog_background">#f2f2f2</color>
+    <color name="custom_sleep_text_color">#d9404040</color>
+    <color name="custom_sleep_divider_background">#607d8b</color>
+    <color name="custom_sleep_save_button_background">#607d8b</color>
+    <color name="mdtp_accent_color">#607d8b</color>
+    <color name="mdtp_accent_color_dark">#455a64</color>
+    <color name="outbox_details_grey">#a7a9ac</color>
+    <color name="share_redirect_search_edit_text_color">#DFDFDF</color>
+    <color name="fragment_outbox_detail_actions_list_color">#F7F7F8</color>
+    <color name="fragment_outbox_detail_actions_list_divider_color">#bcbec0</color>
+    <color name="outbox_task_details_start_date_color">#59424242</color>
+    <color name="outbox_details_process_name_color">#B3424242</color>
+    <color name="outbox_details_folio_color">#59424242</color>
+    <color name="outbox_detail_header_subsequent_item_color">#a7a9ac</color>
+
+    <!--form colors-->
+    <color name="app_forms_background_color">#efeff4</color>
+    <color name="app_forms_cardview_background_color">#e7e6ec</color>
+
+</resources>
